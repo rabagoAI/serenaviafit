@@ -65,3 +65,31 @@ main {
   border-radius: 4px;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .formulario {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .formulario input[type="email"] {
+    width: 100%;
+  }
+
+  .formulario button {
+    width: 100%;
+  }
+
+  header, nav, footer {
+    text-align: center;
+  }
+}
+
