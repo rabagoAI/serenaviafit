@@ -3,12 +3,29 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f1bff87;
+  background-color: #f0f0f0;
   color: #333;
 }
 
 header, nav, main, footer {
   padding: 1rem;
+}
+
+/* Colores distintos para cada sección */
+body.index header {
+  background-color: #ffcccb; /* Rosa suave para Inicio */
+}
+
+body.nutricion header {
+  background-color: #d4edda; /* Verde suave para Nutrición */
+}
+
+body.deporte header {
+  background-color: #cce5ff; /* Azul claro para Deporte */
+}
+
+body.salud header {
+  background-color: #fff3cd; /* Amarillo claro para Salud */
 }
 
 nav a {
