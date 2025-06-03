@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nutrición | SerenaViaFit</title>
   <link rel="stylesheet" href="style.css" />
@@ -17,54 +18,34 @@
     </nav>
   </header>
   <main>
-    <h2>Nutrición</h2>
-
-    <section class="receta">
-      <h3>🍓 Batido de Fresas y Plátano</h3>
-      <p><strong>Ingredientes:</strong></p>
-      <ul>
-        <li>1 plátano maduro</li>
-        <li>6 fresas</li>
-        <li>1 vaso de leche (vegetal o animal)</li>
-        <li>1 cucharadita de semillas de chía (opcional)</li>
-      </ul>
-      <p><strong>Preparación:</strong> Añade todos los ingredientes a una licuadora y mezcla hasta obtener una textura suave. ¡Sirve frío y disfruta!</p>
-    </section>
-
-    <section class="receta">
-      <h3>🥬 Batido Verde Detox</h3>
-      <p><strong>Ingredientes:</strong></p>
-      <ul>
-        <li>1 taza de espinacas</li>
-        <li>1 manzana verde</li>
-        <li>1/2 pepino</li>
-        <li>1 vaso de agua o agua de coco</li>
-        <li>Jugo de 1/2 limón</li>
-      </ul>
-      <p><strong>Preparación:</strong> Lava todos los ingredientes, córtalos en trozos y licúa hasta obtener una mezcla homogénea.</p>
-    </section>
+    <h2>Recetas Saludables</h2>
+    <article>
+      <h3>Ensalada Arcoíris con Edamame</h3>
+      <p><strong>Ingredientes:</strong> papa cocida, edamame, zanahoria, pimiento rojo, pepino, lechuga, anacardos...</p>
+      <p><strong>Preparación:</strong> Mezcla todos los ingredientes y adereza al gusto.</p>
+    </article>
+    <article>
+      <h3>Crema de Hojas de Brócoli</h3>
+      <p>Hojas de brócoli, patata, cebolla, ajo, caldo de verduras...</p>
+      <p>Tritura todo tras cocerlo. Sirve caliente.</p>
+    </article>
+    <article>
+      <h3>Berenjenas Rellenas</h3>
+      <p>Berenjenas, calabacín, pimiento rojo, cebolla, queso rallado...</p>
+      <p>Rellena y hornea a 180°C por 25 min.</p>
+    </article>
   </main>
-
   <footer>
-    <section class="formulario" id="formulario">
+    <section class="formulario">
       <h3>Suscríbete a SerenaViaFit</h3>
-      <form>
+      <form id="formulario" action="https://formspree.io/f/tu-codigo-aqui" method="POST">
         <input type="email" name="email" placeholder="Tu correo electrónico" required />
         <button type="submit">Suscribirme</button>
-        <p id="mensaje"></p>
       </form>
+      <p id="mensaje"></p>
     </section>
     <p style="text-align:center; margin-top: 1rem;">&copy; 2025 SerenaViaFit</p>
   </footer>
-
-  <script>
-    document.getElementById("formulario").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const mensaje = document.getElementById("mensaje");
-      mensaje.textContent = "¡Gracias por suscribirte!";
-      mensaje.style.color = "green";
-      this.reset();
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

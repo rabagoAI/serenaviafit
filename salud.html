@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Salud | SerenaViaFit</title>
   <link rel="stylesheet" href="style.css" />
@@ -17,13 +18,14 @@
     </nav>
   </header>
   <main>
-    <h2>Salud</h2>
-    <p>Contenido de la sección salud próximamente...</p>
+    <h2>Cenas Equilibradas</h2>
+    <p>Proteínas, verduras, grasas saludables y carbohidratos complejos.</p>
+    <p>Evita cenas copiosas para mejorar tu descanso.</p>
   </main>
   <footer>
     <section class="formulario">
       <h3>Suscríbete a SerenaViaFit</h3>
-      <form id="formulario">
+      <form id="formulario" action="https://formspree.io/f/tu-codigo-aqui" method="POST">
         <input type="email" name="email" placeholder="Tu correo electrónico" required />
         <button type="submit">Suscribirme</button>
       </form>
@@ -31,14 +33,6 @@
     </section>
     <p style="text-align:center; margin-top: 1rem;">&copy; 2025 SerenaViaFit</p>
   </footer>
-  <script>
-    document.getElementById("formulario").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const mensaje = document.getElementById("mensaje");
-      mensaje.textContent = "¡Gracias por suscribirte!";
-      mensaje.style.color = "green";
-      this.reset();
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
