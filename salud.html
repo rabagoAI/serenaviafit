@@ -2,42 +2,310 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Salud y Belleza | SerenaViaFit</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salud y Belleza | SerenaViaFit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        header {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            color: #2c5f2d;
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #2c5f2d;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .health-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .health-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .health-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h2 {
+            font-size: 1.4rem;
+            color: #2c5f2d;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .card-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .wellness-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .wellness-text h2 {
+            font-size: 2rem;
+            color: #2c5f2d;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .wellness-text p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .wellness-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+        }
+
+        .formulario {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .formulario h3 {
+            color: #2c5f2d;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        form {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        input[type="email"] {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        button {
+            background: #2c5f2d;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #1e4220;
+        }
+
+        #mensaje {
+            margin-top: 1rem;
+            padding: 0.5rem;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .mensaje-exito {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            .health-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .wellness-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            form {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body class="salud">
-  <header>
-    <h1>Salud y Belleza</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="nutricion.html">Nutrición</a>
-      <a href="deporte.html">Deporte</a>
-      <a href="salud.html">Salud y Belleza</a>
-    </nav>
-  </header>
-  <main>
-    <article>
-      <h2>Consejo: Hidratación diaria</h2>
-      <p>Beber al menos 1.5L de agua al día ayuda a mantener la piel sana y el cuerpo activo.</p>
-    </article>
-    <article>
-      <h2>Truco: Mascarilla facial natural</h2>
-      <p>Mezcla miel con avena y yogur para una mascarilla casera exfoliante.</p>
-    </article>
-  </main>
-  <footer>
-    <section class="formulario">
-      <h3>Suscríbete a SerenaViaFit</h3>
-      <form id="formulario" action="#">
-        <input type="email" name="email" placeholder="Tu correo electrónico" required />
-        <button type="submit">Suscribirme</button>
-        <p id="mensaje"></p>
-      </form>
-    </section>
-    <p style="text-align:center; margin-top: 1rem;">&copy; 2025 SerenaViaFit</p>
-  </footer>
-  <script src="script.js"></script>
+    <header>
+        <div class="container">
+            <h1>Salud y Belleza</h1>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="nutricion.html">Nutrición</a>
+                <a href="deporte.html">Deporte</a>
+                <a href="salud.html" class="active">Salud y Belleza</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="health-grid">
+            <article class="health-card">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=200&fit=crop" alt="Hidratación saludable" class="card-image">
+                <div class="card-content">
+                    <h2>Consejo: Hidratación diaria</h2>
+                    <p>Beber al menos 1.5L de agua al día ayuda a mantener la piel sana y el cuerpo activo. La hidratación adecuada mejora la circulación y ayuda a eliminar toxinas naturalmente.</p>
+                </div>
+            </article>
+
+            <article class="health-card">
+                <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=400&h=200&fit=crop" alt="Mascarilla facial natural" class="card-image">
+                <div class="card-content">
+                    <h2>Truco: Mascarilla facial natural</h2>
+                    <p>Mezcla miel con avena y yogur para una mascarilla casera exfoliante. Esta combinación natural nutre la piel profundamente y la deja suave y radiante.</p>
+                </div>
+            </article>
+
+            <article class="health-card">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=200&fit=crop" alt="Descanso reparador" class="card-image">
+                <div class="card-content">
+                    <h2>Tip: Sueño reparador</h2>
+                    <p>Dormir 7-8 horas diarias es fundamental para la regeneración celular. Durante el sueño, tu piel se repara y renueva, manteniéndote joven y saludable.</p>
+                </div>
+            </article>
+
+            <article class="health-card">
+                <img src="https://images.unsplash.com/photo-1506629905607-92902ab23966?w=400&h=200&fit=crop" alt="Alimentación antioxidante" class="card-image">
+                <div class="card-content">
+                    <h2>Consejo: Antioxidantes naturales</h2>
+                    <p>Incorpora frutas rojas, té verde y vegetales de hoja verde en tu dieta. Los antioxidantes combaten el envejecimiento prematuro desde el interior.</p>
+                </div>
+            </article>
+        </div>
+
+        <section class="wellness-section">
+            <div class="wellness-text">
+                <h2>Bienestar integral</h2>
+                <p>La belleza verdadera nace del equilibrio entre cuerpo y mente. Cuidar tu salud de forma holística se refleja en tu apariencia y energía diaria.</p>
+                <p>Adopta hábitos simples pero consistentes que nutran tu bienestar desde adentro hacia afuera.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1506629905607-92902ab23966?w=500&h=250&fit=crop" alt="Estilo de vida saludable" class="wellness-image">
+        </section>
+    </main>
+
+    <footer>
+        <section class="formulario">
+            <h3>Suscríbete a SerenaViaFit</h3>
+            <form id="formulario" action="#">
+                <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                <button type="submit">Suscribirme</button>
+            </form>
+            <p id="mensaje"></p>
+        </section>
+        <p style="text-align:center; margin-top: 1rem; color: #666;">&copy; 2025 SerenaViaFit</p>
+    </footer>
+
+    <script>
+        document.getElementById('formulario').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.email.value;
+            const mensaje = document.getElementById('mensaje');
+            
+            if (email) {
+                mensaje.textContent = '¡Gracias por suscribirte! Te enviaremos los mejores consejos de salud y belleza.';
+                mensaje.className = 'mensaje-exito';
+                mensaje.style.display = 'block';
+                this.reset();
+            }
+        });
+    </script>
 </body>
 </html>
