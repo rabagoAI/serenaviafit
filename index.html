@@ -6,39 +6,31 @@
   <title>Inicio | SerenaViaFit</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="index">
+<body class="inicio">
   <header>
     <h1>SerenaViaFit</h1>
     <nav>
       <a href="index.html">Inicio</a>
       <a href="nutricion.html">Nutrición</a>
       <a href="deporte.html">Deporte</a>
-      <a href="salud.html">Salud</a>
+      <a href="salud.html">Salud y Belleza</a>
     </nav>
   </header>
   <main>
     <h2>Bienvenida a SerenaViaFit</h2>
-    <p>Tu sitio de confianza sobre nutrición, deporte y salud.</p>
+    <p>Consejos de nutrición, deporte y salud para una vida más plena.</p>
   </main>
   <footer>
     <section class="formulario">
       <h3>Suscríbete a SerenaViaFit</h3>
-      <form id="formulario">
+      <form id="formulario" action="#">
         <input type="email" name="email" placeholder="Tu correo electrónico" required />
         <button type="submit">Suscribirme</button>
+        <p id="mensaje"></p>
       </form>
-      <p id="mensaje"></p>
     </section>
     <p style="text-align:center; margin-top: 1rem;">&copy; 2025 SerenaViaFit</p>
   </footer>
-  <script>
-    document.getElementById("formulario").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const mensaje = document.getElementById("mensaje");
-      mensaje.textContent = "¡Gracias por suscribirte!";
-      mensaje.style.color = "green";
-      this.reset();
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
